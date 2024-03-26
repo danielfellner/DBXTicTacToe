@@ -29,9 +29,9 @@ Az analyser ilyenkor az alapértelemezett legkisebb 3x3 -as tábla esetén vett 
 Az játéktábla ettől eltérhet, a rendszer a felolvasott adatok alapján kalkulálja a tábla méretet. 
 
 b.) input argumentumokkal 
--f | -filename ${magának az adatájlnak a neve}
+-f | -filename $magának az adatájlnak a neve
 illetve 
--m : -markers ${az egymás melletti markerek száma}
+-m | -markers $az egymás melletti markerek száma
 
 pl.
 ~/IdeaProjects/DBXTicTacToe$ java -cp target/DBXTicTacToe-1.0-SNAPSHOT.jar:target/libs/* hu.dbx.homework.TicTacToeEndGameAnalyserApplicationMain -m 3 -f target/test-classes/testfile.txt
