@@ -36,7 +36,7 @@ public class TicTacToeEndGameAnalyserApplicationMainTest {
   void testFileLongNameArg() {
     ByteArrayInputStream testIn = new ByteArrayInputStream("".getBytes());
     System.setIn(testIn);
-    String[] args = {"-filename", "./target/test-classes/runtime_testfile.txt"};
+    String[] args = {"-filename", "./target/test-classes/testfile.txt"};
     TicTacToeEndGameAnalyserApplicationMain.main(args);
   }
 
@@ -44,7 +44,7 @@ public class TicTacToeEndGameAnalyserApplicationMainTest {
   void testFileShortNameArg() {
     ByteArrayInputStream testIn = new ByteArrayInputStream("".getBytes());
     System.setIn(testIn);
-    String[] args = {"-f", "./target/test-classes/runtime_testfile.txt"};
+    String[] args = {"-f", "./target/test-classes/testfile.txt"};
     TicTacToeEndGameAnalyserApplicationMain.main(args);
   }
 
