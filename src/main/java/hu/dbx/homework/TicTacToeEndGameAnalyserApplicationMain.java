@@ -33,23 +33,25 @@ public class TicTacToeEndGameAnalyserApplicationMain {
   public static void main(String[] args) {
 
     CommandLine cmd = getCommandLine(CmdOptions.getCmdOptionsField(), args);
-    List<String> programArgumentErrorMessages = new ArrayList<>();
+    if (cmd!=null){
+      List<String> programArgumentErrorMessages = new ArrayList<>();
 
-    int markerToWin = readMarkerToWin(cmd, programArgumentErrorMessages);
-    String data = readTableMarkerInputData(cmd, programArgumentErrorMessages);
+      int markerToWin = readMarkerToWin(cmd, programArgumentErrorMessages);
+      String data = readTableMarkerInputData(cmd, programArgumentErrorMessages);
 
-    if (programArgumentErrorMessages.isEmpty()) {
-      TicTacEndGameAnalyser analyser = new TicTacEndGameAnalyser(data, markerToWin);
-      AnalyserResult result = analyser.calculateEndGameResult();
-      if (!result.getStatus().isErrorState()) {
-        logger.info(result.getResultMessage());
-        logger.info(data);
+      if (programArgumentErrorMessages.isEmpty()) {
+        TicTacEndGameAnalyser analyser = new TicTacEndGameAnalyser(data, markerToWin);
+        AnalyserResult result = analyser.calculateEndGameResult();
+        if (!result.getStatus().isErrorState()) {
+          logger.info(result.getResultMessage());
+          logger.info(data);
+        } else {
+          logger.error(result.getResultMessage());
+        }
       } else {
-        logger.error(result.getResultMessage());
-      }
-    } else {
-      for (String error : programArgumentErrorMessages) {
-        logger.error(error);
+        for (String error : programArgumentErrorMessages) {
+          logger.error(error);
+        }
       }
     }
   }
