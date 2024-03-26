@@ -37,7 +37,7 @@ public class AnalyserResult {
   }
 
   public void setPlayer1Won(boolean won) {
-      this.player1Won = won;
+    this.player1Won = won;
   }
 
   public boolean isPlayer1Won() {
@@ -59,5 +59,4 @@ public class AnalyserResult {
   public boolean isDraw() {
     return this.draw;
   }
-
 }

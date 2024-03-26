@@ -24,16 +24,18 @@ public class TicTacToeEndGameAnalyserApplicationMain {
   private static Logger logger =
       LoggerFactory.getLogger(TicTacToeEndGameAnalyserApplicationMain.class);
 
-    /**
-     * Simple Tic-Tac-Toe game status analyzer application main method that parse the game data from file or stdInput
-     * and set the marker to win count to the {@link TicTacEndGameAnalyser} util class that can calculate the result.
-     *
-     * It is log the error states to the standard error and log the valid states to the standard input.
-     */
+  /**
+   * Simple Tic-Tac-Toe game status analyzer application main method that parse the game data from
+   * file or stdInput and set the marker to win count to the {@link TicTacEndGameAnalyser} util
+   * class that can calculate the result.
+   *
+   * <p>It is log the error states to the standard error and log the valid states to the standard
+   * input.
+   */
   public static void main(String[] args) {
 
     CommandLine cmd = getCommandLine(CmdOptions.getCmdOptionsField(), args);
-    if (cmd!=null){
+    if (cmd != null) {
       List<String> programArgumentErrorMessages = new ArrayList<>();
 
       int markerToWin = readMarkerToWin(cmd, programArgumentErrorMessages);
@@ -56,13 +58,13 @@ public class TicTacToeEndGameAnalyserApplicationMain {
     }
   }
 
-    /**
-     * Parse command line options
-     *
-     * @param options - command line option
-     * @param args - main program arguments
-     * @return parsed
-     */
+  /**
+   * Parse command line options
+   *
+   * @param options - command line option
+   * @param args - main program arguments
+   * @return parsed
+   */
   private static CommandLine getCommandLine(Options options, String[] args) {
     CommandLineParser parser = new DefaultParser();
     CommandLine cmd = null;
@@ -75,14 +77,15 @@ public class TicTacToeEndGameAnalyserApplicationMain {
     return cmd;
   }
 
-    /**
-     * Read and parse the marker counts from the program arguments
-     * @param cmd - The command line should contains the marker count that decide marker count to won the game
-     * @param programArgumentErrorMessages
-     * @return marker to win counts
-     */
-  private static int readMarkerToWin(
-      CommandLine cmd, List<String> programArgumentErrorMessages) {
+  /**
+   * Read and parse the marker counts from the program arguments
+   *
+   * @param cmd - The command line should contains the marker count that decide marker count to won
+   *     the game
+   * @param programArgumentErrorMessages
+   * @return marker to win counts
+   */
+  private static int readMarkerToWin(CommandLine cmd, List<String> programArgumentErrorMessages) {
     int markerToWin = DEFAULT_MARKER_TO_WIN;
     if (cmd.hasOption(MARKER_TO_WIN.getLongName())) {
       String mcString = cmd.getOptionValue(MARKER_TO_WIN.getLongName());
@@ -105,14 +108,16 @@ public class TicTacToeEndGameAnalyserApplicationMain {
     return markerToWin;
   }
 
-    /**
-     * Read the game table data from a regular file using command line option. If there is not file argument set the method read it from the standard input.
-     *
-     * @param cmd - It should countains the file path argument value
-     * @param programArgumentErrorMessages - collect the file or standard input error messages
-     * @return rawData is a read data from file or standard input
-     */
-  private static String readTableMarkerInputData(CommandLine cmd, List<String> programArgumentErrorMessages) {
+  /**
+   * Read the game table data from a regular file using command line option. If there is not file
+   * argument set the method read it from the standard input.
+   *
+   * @param cmd - It should countains the file path argument value
+   * @param programArgumentErrorMessages - collect the file or standard input error messages
+   * @return rawData is a read data from file or standard input
+   */
+  private static String readTableMarkerInputData(
+      CommandLine cmd, List<String> programArgumentErrorMessages) {
     String rawData = null;
     if (cmd.hasOption(FILENAME.getLongName())) {
       String mcString = cmd.getOptionValue(FILENAME.getLongName());

@@ -26,6 +26,7 @@ public class TicTacEndGameAnalyser {
 
   /**
    * Constructor
+   *
    * @param rawTableData - String param contains game table data
    * @param marksToWin - contains how many markers can be set to the right position to win the game
    */
@@ -87,12 +88,14 @@ public class TicTacEndGameAnalyser {
         preGeneratedErrorMessages.add("There is no information about game table data.");
       } else {
         preGeneratedErrorMessages.add(
-            "Checked data length ("+rawData.length()+") less than a minimal game table ("
-                .concat("" + DEFAULT_MINIMAL_TABLE_SIZE)
-                .concat("X")
-                .concat("" + DEFAULT_MINIMAL_TABLE_SIZE)
-                .concat(" ) data length : ")
-                .concat("" + getDefaultMinimalTableSizeDataLength()));
+            "Checked data length ("
+                + rawData.length()
+                + ") less than a minimal game table ("
+                    .concat("" + DEFAULT_MINIMAL_TABLE_SIZE)
+                    .concat("X")
+                    .concat("" + DEFAULT_MINIMAL_TABLE_SIZE)
+                    .concat(" ) data length : ")
+                    .concat("" + getDefaultMinimalTableSizeDataLength()));
       }
     }
 
