@@ -37,8 +37,8 @@ pl.
 ~/IdeaProjects/DBXTicTacToe$ java -cp target/DBXTicTacToe-1.0-SNAPSHOT.jar:target/libs/* hu.dbx.homework.TicTacToeEndGameAnalyserApplicationMain -m 3 -f target/test-classes/testfile.txt
 
 A program a standard inputra loggolja az eredményt, amennyiben a végállás alapján kalkulálható a játékosok győzelme, vagy a döntetlen állapot
-Amennyiben nem a standard error-ra fogja loggolni az észrevételeket.
+Amennyiben nem, a standard error-ra fogja loggolni az észrevételeket.
 
-pl.
+pl. extrém példa: egy fájlban megadott 4x4-es táblának 300 az egymásmelletti markerek száma. 
 ~/IdeaProjects/DBXTicTacToe$ java -cp target/DBXTicTacToe-1.0-SNAPSHOT.jar:target/libs/* hu.dbx.homework.TicTacToeEndGameAnalyserApplicationMain -m 300 -f target/test-classes/testfile.txt
 
